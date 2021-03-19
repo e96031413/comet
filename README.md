@@ -19,6 +19,7 @@ The code is built with following libraries:
 pip install scanpy --ignore-installed llvmlite
 pip install wandb
 pip install anndata
+pip install goatools
 ```
 
 ### Getting started
