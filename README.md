@@ -24,11 +24,11 @@ pip install anndata
 ### Getting started
 
 ##### CUB dataset
-* Change directory to `comet/CUB/filelists/CUB/download_CUB.sh`
+* Change directory to `comet/CUB/filelists/CUB/`
 * Run `source ./download_CUB.sh`
 
 ##### Tabula Muris dataset
-* Change directory to `comet/TM/filelists/tabula_muris/download_TM.sh`
+* Change directory to `comet/TM/filelists/tabula_muris/`
 * Run `source ./download_TM.sh`
 
 ### Usage
