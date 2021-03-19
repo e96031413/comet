@@ -79,5 +79,3 @@ class MacaData():
 if __name__ == '__main__':
     md = MacaData(src_file='../filelists/tabula_muris/tabula-muris-comet.h5ad')
     tiss = md.get_tissue_data('Kidney')
-    import pdb; pdb.set_trace()
-    
