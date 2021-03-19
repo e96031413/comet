@@ -16,7 +16,7 @@ The code is built with following libraries:
 - [wandb](https://www.wandb.com/)
 
 ```
-pip install scanpy
+pip install scanpy --ignore-installed llvmlite
 pip install wandb
 pip install anndata
 ```
