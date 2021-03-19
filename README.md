@@ -14,6 +14,12 @@ This repo contains the reference source code in PyTorch of the COMET algorithm. 
 
 The code is built with following libraries:
 
+```
+pip install scanpy
+pip install wandb
+pip install anndata
+```
+
 - [PyTorch](https://pytorch.org/) 1.5
 - [anndata](https://icb-anndata.readthedocs-hosted.com/en/stable/anndata.AnnData.html)
 - [scanpy](https://icb-scanpy.readthedocs-hosted.com/en/stable/)
@@ -23,11 +29,11 @@ The code is built with following libraries:
 ### Getting started
 
 ##### CUB dataset
-* Change directory to `./filelists/CUB`
+* Change directory to `comet/CUB/filelists/CUB/download_CUB.sh`
 * Run `source ./download_CUB.sh`
 
 ##### Tabula Muris dataset
-* Change directory to `./filelists/tabula_muris`
+* Change directory to `comet/TM/filelists/tabula_muris/download_TM.sh`
 * Run `source ./download_TM.sh`
 
 ### Usage
