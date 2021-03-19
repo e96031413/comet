@@ -4,27 +4,22 @@ Kaidi Cao*, Maria Brbić*, Jure Leskovec
 [Project website](http://snap.stanford.edu/comet)
 _________________
 
-This repo contains the reference source code in PyTorch of the COMET algorithm. COMET is a meta-learning method that learns generalizable representations along human-understandable concept dimensions. For more details please check our paper [Concept Learners for Few-Shot Learning](https://arxiv.org/pdf/2007.07375.pdf) (ICLR '21). 
-
-<p align="center">
-<img src="https://github.com/snap-stanford/comet/blob/master/img/COMET_model.png" width="1100" align="center">
-</p>
-
 ### Dependencies
 
 The code is built with following libraries:
 
-```
-pip install scanpy
-pip install wandb
-pip install anndata
-```
 
 - [PyTorch](https://pytorch.org/) 1.5
 - [anndata](https://icb-anndata.readthedocs-hosted.com/en/stable/anndata.AnnData.html)
 - [scanpy](https://icb-scanpy.readthedocs-hosted.com/en/stable/)
 - json
 - [wandb](https://www.wandb.com/)
+
+```
+pip install scanpy
+pip install wandb
+pip install anndata
+```
 
 ### Getting started
 
@@ -43,6 +38,8 @@ pip install anndata
 We provide an example here:
 
 Run
+```cd comet/CUB/```
+
 ```python ./train.py --dataset CUB --model Conv4NP --method comet --train_aug```
 
 ##### Testing
@@ -59,22 +56,3 @@ If you would like to test your algorithm on the new benchmark dataset introduced
 Dataset needs to be preprocessed using [preprocess.py](https://github.com/snap-stanford/comet/blob/master/TM/data/preprocess.py). Train/test/validation splits are available in [load_tabula_muris](https://github.com/snap-stanford/comet/blob/master/TM/data/dataset.py). 
 
 Running this code requires [anndata](https://icb-anndata.readthedocs-hosted.com/en/stable/anndata.AnnData.html) and [scanpy](https://icb-scanpy.readthedocs-hosted.com/en/stable/) libraries.
-
-### Citing
-
-If you find our research useful, please consider citing:
-
-```
-@inproceedings{
-    cao2021concept,
-    title={Concept Learners for Few-Shot Learning},
-    author={Cao, Kaidi and Brbi\'c, Maria and Leskovec, Jure},
-    booktitle={International Conference on Learning Representations (ICLR)},
-    year={2021},
-}
-```
-
-Our codebase is developed based on the [benchmark implementation](https://github.com/wyharveychen/CloserLookFewShot) from paper [A Closer Look at Few-shot Classification](https://openreview.net/pdf?id=HkxLXnAcFQ). 
-
-
-Tabula Muris benchmark is developed based on the mouse aging cell atlas from paper [https://www.nature.com/articles/s41586-020-2496-1](https://www.nature.com/articles/s41586-020-2496-1).
