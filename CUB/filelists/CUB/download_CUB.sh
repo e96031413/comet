@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
-gdown http://www.vision.caltech.edu/visipedia-data/CUB-200-2011/CUB_200_2011.tgz
-tar -zxvf CUB_200_2011.tgz
-python write_CUB_filelist.py
+wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1hbzc_P1FuxMkcabkgn9ZKinBwW683j45' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1hbzc_P1FuxMkcabkgn9ZKinBwW683j45" -O CUB_200_2011.tgz && rm -rf /tmp/cookies.txt
+tar -zxf CUB_200_2011.tgz
+python3 write_CUB_filelist.py
