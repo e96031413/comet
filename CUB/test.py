@@ -170,13 +170,27 @@ if __name__ == '__main__':
         acc_mean = np.mean(acc_all)
         acc_std  = np.std(acc_all)
         print('%d Test Acc = %4.2f%% +- %4.2f%%' %(iter_num, acc_mean, 1.96* acc_std/np.sqrt(iter_num)))
-    with open('./record/results.txt' , 'a') as f:
-        timestamp = time.strftime("%Y%m%d-%H%M%S", time.localtime()) 
-        aug_str = '-aug' if params.train_aug else ''
-        aug_str += '-adapted' if params.adaptation else ''
-        if params.method in ['baseline', 'baseline++'] :
-            exp_setting = '%s-%s-%s-%s%s %sshot %sway_test' %(params.dataset, split_str, params.model, params.method, aug_str, params.n_shot, params.test_n_way )
-        else:
-            exp_setting = '%s-%s-%s-%s%s %sshot %sway_train %sway_test' %(params.dataset, split_str, params.model, params.method, aug_str , params.n_shot , params.train_n_way, params.test_n_way )
-        acc_str = '%d Test Acc = %4.2f%% +- %4.2f%%' %(iter_num, acc_mean, 1.96* acc_std/np.sqrt(iter_num))
-        f.write( 'Time: %s, Setting: %s, Acc: %s \n' %(timestamp,exp_setting,acc_str)  )
+    
+    
+    if os.path.exists('./results.txt'):
+        with open('./results.txt' , 'a') as f:
+            timestamp = time.strftime("%Y%m%d-%H%M%S", time.localtime()) 
+            aug_str = '-aug' if params.train_aug else ''
+            aug_str += '-adapted' if params.adaptation else ''
+            if params.method in ['baseline', 'baseline++'] :
+                exp_setting = '%s-%s-%s-%s%s %sshot %sway_test' %(params.dataset, split_str, params.model, params.method, aug_str, params.n_shot, params.test_n_way )
+            else:
+                exp_setting = '%s-%s-%s-%s%s %sshot %sway_train %sway_test' %(params.dataset, split_str, params.model, params.method, aug_str , params.n_shot , params.train_n_way, params.test_n_way )
+            acc_str = '%d Test Acc = %4.2f%% +- %4.2f%%' %(iter_num, acc_mean, 1.96* acc_std/np.sqrt(iter_num))
+            f.write( 'Time: %s, Setting: %s, Acc: %s \n' %(timestamp,exp_setting,acc_str)  )
+    else:
+        with open('./results.txt' , 'w') as f:
+            timestamp = time.strftime("%Y%m%d-%H%M%S", time.localtime()) 
+            aug_str = '-aug' if params.train_aug else ''
+            aug_str += '-adapted' if params.adaptation else ''
+            if params.method in ['baseline', 'baseline++'] :
+                exp_setting = '%s-%s-%s-%s%s %sshot %sway_test' %(params.dataset, split_str, params.model, params.method, aug_str, params.n_shot, params.test_n_way )
+            else:
+                exp_setting = '%s-%s-%s-%s%s %sshot %sway_train %sway_test' %(params.dataset, split_str, params.model, params.method, aug_str , params.n_shot , params.train_n_way, params.test_n_way )
+            acc_str = '%d Test Acc = %4.2f%% +- %4.2f%%' %(iter_num, acc_mean, 1.96* acc_std/np.sqrt(iter_num))
+            f.write( 'Time: %s, Setting: %s, Acc: %s \n' %(timestamp,exp_setting,acc_str)  )
