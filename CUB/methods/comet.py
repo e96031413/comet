@@ -36,6 +36,7 @@ class COMET(MetaTemplate):
 
         return self.loss_fn(scores, y_query )
 
+    # parse_feature用來把support set和query set抓出來
     def parse_feature(self, x, joints, is_feature):
         x    = Variable(x.cuda())
         if is_feature:
